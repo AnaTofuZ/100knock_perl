@@ -12,17 +12,27 @@ my $elements_text = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Na
 
 $elements_text =~ s/\.//g;
 
-my @cut_one=qw[1 5 6 7 8 9 15 16 19];
+#my @cut_one=qw[1 5 6 7 8 9 15 16 19];
+my @cut_one=(1,5,6,7,8,9,15,16,19);
 
 my @elements = split / /,$elements_text;
 
-    my $check = shift @elements;
+
+my $check = shift @cut_one;
 
 my %result=();
 
 for (my $i = 1; $i <= @elements; $i++) {
    
-    if($check == $i){
-
-
+    if($check eq $i){
+        my($ten,$one) = split //,$elements[$i];
+        $result{"$ten$one"} = $i;
+        $check = shift @cut_one;
+        next;
+    }
+        
+#    my $temp = split //,$elements[$i];
+#    $result{"$temp"} = $i;
 }
+
+
