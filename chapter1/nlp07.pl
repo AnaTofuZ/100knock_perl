@@ -6,8 +6,7 @@ use utf8;
 binmode STDIN,':utf8';
 binmode STDOUT,':utf8';
 
-my $message = &weather(12,"気温",22.4);
-print "$message\n";
+print (&weather(12,"気温",22.4)."\n");
 
 sub weather {
 
