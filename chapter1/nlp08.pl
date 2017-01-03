@@ -28,7 +28,8 @@ sub cipher {
          $_ =chr(219 - ord($_));
         } 
     }
-
-    my $return  =  join("",@input);
+    
+    join("",@input);
+    #my $return  =  join("",@input);
 
 }
